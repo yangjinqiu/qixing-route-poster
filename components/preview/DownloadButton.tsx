@@ -24,8 +24,8 @@ export default function DownloadButton() {
     if (!state.selectedTemplate) return null;
 
     const imagePromises = state.photos.map((photo) => {
-      if (!photo) return Promise.resolve(null);
-      return new Promise<HTMLImageElement>((resolve) => {
+      if (!photo) return Promise.resolve<HTMLImageElement | null>(null);
+      return new Promise<HTMLImageElement | null>((resolve) => {
         const img = new Image();
         img.onload = () => resolve(img);
         img.onerror = () => resolve(null);
