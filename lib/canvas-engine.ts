@@ -79,7 +79,7 @@ export function renderPreview(
     const r = Math.floor(i / 3), c = i % 3;
     if (images[i]) {
       const tmp = document.createElement('canvas'); tmp.width = CELL; tmp.height = CELL;
-      drawImageCover(tmp.getContext('2d')!, images[i], CELL, CELL);
+      drawImageCover(tmp.getContext('2d')!, images[i]!, CELL, CELL);
       ctx.drawImage(tmp, c * CELL, r * CELL);
     } else {
       ctx.fillStyle = '#1E293B'; ctx.fillRect(c * CELL, r * CELL, CELL, CELL);
