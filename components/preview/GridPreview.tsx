@@ -60,7 +60,7 @@ export default function GridPreview() {
     } else {
       ctx.fillStyle = '#F1F5F9'; ctx.fillRect(0, 0, sz, sz);
       ctx.fillStyle = '#94A3B8'; ctx.font = '14px sans-serif'; ctx.textAlign = 'center';
-      ctx.fillText('上传照片并选择路线模板后预览', sz / 2, sz / 2);
+      ctx.fillText('上传照片并选择线路模板后预览', sz / 2, sz / 2);
     }
   }, [imgs, tpl, col, w, op]);
 

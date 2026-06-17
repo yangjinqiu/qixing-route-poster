@@ -7,10 +7,12 @@ import PhotoUploader from '@/components/upload/PhotoUploader';
 import TemplateSelector from '@/components/route/TemplateSelector';
 import RouteCustomizer from '@/components/route/RouteCustomizer';
 import PreviewPanel from '@/components/preview/PreviewPanel';
+import WelcomeModal from '@/components/layout/WelcomeModal';
 
 export default function Home() {
   return (
     <AppProvider>
+      <WelcomeModal />
       <div className="min-h-screen flex flex-col bg-gray-50">
         <Header />
 
@@ -23,7 +25,7 @@ export default function Home() {
               <TemplateSelector />
               <hr className="border-gray-100" />
               <div>
-                <h3 className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-4">路线样式</h3>
+                <h3 className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-4">线路样式</h3>
                 <RouteCustomizer />
               </div>
             </div>
@@ -38,7 +40,7 @@ export default function Home() {
               <TemplateSelector />
               <hr className="border-gray-100" />
               <div>
-                <h3 className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-4">路线样式</h3>
+                <h3 className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-4">线路样式</h3>
                 <RouteCustomizer />
               </div>
             </div>

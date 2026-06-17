@@ -8,6 +8,7 @@ const defaultColor = '#FF6B6B';
 const initialState: AppState = {
   photos: Array(9).fill(null),
   selectedTemplate: null,
+  customTemplates: [],
   routeColor: defaultColor,
   routeWidth: 5,
   routeOpacity: 0.85,
@@ -33,6 +34,13 @@ function reducer(state: AppState, action: AppAction): AppState {
     }
     case 'SET_TEMPLATE':
       return { ...state, selectedTemplate: action.template };
+    case 'ADD_CUSTOM_TEMPLATE':
+      return { ...state, customTemplates: [...state.customTemplates, action.template], selectedTemplate: action.template };
+    case 'REMOVE_CUSTOM_TEMPLATE': {
+      const filtered = state.customTemplates.filter((t) => t.id !== action.id);
+      const sel = state.selectedTemplate?.id === action.id ? (filtered.length > 0 ? filtered[0] : null) : state.selectedTemplate;
+      return { ...state, customTemplates: filtered, selectedTemplate: sel };
+    }
     case 'SET_ROUTE_COLOR':
       return { ...state, routeColor: action.color };
     case 'SET_ROUTE_WIDTH':

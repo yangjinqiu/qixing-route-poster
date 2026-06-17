@@ -82,7 +82,7 @@ export default function DownloadButton() {
             生成中...
           </span>
         ) : !state.selectedTemplate ? (
-          '👆 请先选择路线模板'
+          '👆 请先选择线路模板'
         ) : state.photos.filter(Boolean).length < 9 ? (
           `📷 还需上传 ${9 - state.photos.filter(Boolean).length} 张照片`
         ) : (

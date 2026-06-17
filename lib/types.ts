@@ -40,6 +40,7 @@ export interface PhotoItem {
 export interface AppState {
   photos: (PhotoItem | null)[];
   selectedTemplate: RouteTemplate | null;
+  customTemplates: RouteTemplate[];
   routeColor: string;
   routeWidth: number;
   routeOpacity: number;
@@ -51,6 +52,8 @@ export type AppAction =
   | { type: 'REMOVE_PHOTO'; position: number }
   | { type: 'SWAP_PHOTOS'; from: number; to: number }
   | { type: 'SET_TEMPLATE'; template: RouteTemplate }
+  | { type: 'ADD_CUSTOM_TEMPLATE'; template: RouteTemplate }
+  | { type: 'REMOVE_CUSTOM_TEMPLATE'; id: string }
   | { type: 'SET_ROUTE_COLOR'; color: string }
   | { type: 'SET_ROUTE_WIDTH'; width: number }
   | { type: 'SET_ROUTE_OPACITY'; opacity: number }

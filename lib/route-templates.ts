@@ -6,7 +6,7 @@ import taihu from '@/data/templates/taihu.json';
 import hainan from '@/data/templates/hainan.json';
 import qinghai from '@/data/templates/qinghai.json';
 
-const templates: RouteTemplate[] = [
+const presets: RouteTemplate[] = [
   fangshan as RouteTemplate,
   huanling as RouteTemplate,
   jiangxinzhou as RouteTemplate,
@@ -15,10 +15,14 @@ const templates: RouteTemplate[] = [
   qinghai as RouteTemplate,
 ];
 
-export function getAllTemplates(): RouteTemplate[] {
-  return templates;
+export function getPresetTemplates(): RouteTemplate[] {
+  return presets;
 }
 
-export function getTemplateById(id: string): RouteTemplate | undefined {
-  return templates.find((t) => t.id === id);
+export function getAllTemplates(customTemplates: RouteTemplate[] = []): RouteTemplate[] {
+  return [...presets, ...customTemplates];
+}
+
+export function getTemplateById(id: string, customTemplates: RouteTemplate[] = []): RouteTemplate | undefined {
+  return getAllTemplates(customTemplates).find((t) => t.id === id);
 }

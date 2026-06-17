@@ -38,7 +38,8 @@ export default function RouteCustomizer() {
           <span className="text-[11px] text-gray-400 tabular-nums">{state.routeWidth}px</span>
         </div>
         <input type="range" min="2" max="12" value={state.routeWidth}
-          onChange={(e) => dispatch({ type: 'SET_ROUTE_WIDTH', width: Number(e.target.value) })} />
+          onChange={(e) => dispatch({ type: 'SET_ROUTE_WIDTH', width: Number(e.target.value) })}
+          className="w-full" />
       </div>
 
       {/* Opacity */}
@@ -48,7 +49,8 @@ export default function RouteCustomizer() {
           <span className="text-[11px] text-gray-400 tabular-nums">{Math.round(state.routeOpacity * 100)}%</span>
         </div>
         <input type="range" min="30" max="100" value={Math.round(state.routeOpacity * 100)}
-          onChange={(e) => dispatch({ type: 'SET_ROUTE_OPACITY', opacity: Number(e.target.value) / 100 })} />
+          onChange={(e) => dispatch({ type: 'SET_ROUTE_OPACITY', opacity: Number(e.target.value) / 100 })}
+          className="w-full" />
       </div>
     </div>
   );
