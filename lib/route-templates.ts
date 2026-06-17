@@ -6,6 +6,10 @@ import taihu from '@/data/templates/taihu.json';
 import hainan from '@/data/templates/hainan.json';
 import qinghai from '@/data/templates/qinghai.json';
 
+// === AUTO_IMPORTS_START ===
+import 石臼湖 from '@/data/templates/石臼湖.json';
+// === AUTO_IMPORTS_END ===
+
 const presets: RouteTemplate[] = [
   fangshan as RouteTemplate,
   huanling as RouteTemplate,
@@ -13,6 +17,9 @@ const presets: RouteTemplate[] = [
   taihu as RouteTemplate,
   hainan as RouteTemplate,
   qinghai as RouteTemplate,
+  // === AUTO_ENTRIES_START ===
+  石臼湖 as RouteTemplate,
+// === AUTO_ENTRIES_END ===
 ];
 
 export function getPresetTemplates(): RouteTemplate[] {
